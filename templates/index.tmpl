@@ -1,0 +1,33 @@
+{{ define "index" }}
+  {{template "header"}}
+    
+  <a name="newEmployee" id="newEmployee" class="btn btn-primary" href="/create" role="button">New employee</a>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{range.}}
+      <tr>
+        <td>{{.Id}}</td>
+        <td>{{.Name}}</td>
+        <td>{{.Email}}</td>
+        <td>
+          <a name="edit" id="edit" class="btn btn-primary" href="/edit?id={{.Id}}" role="button">Edit</a>
+          | 
+          <a name="delete" id="delete" class="btn btn-danger" href="/delete?id={{.Id}}" role="button">Delete</a>
+        </td>
+      </tr>
+      {{end}}
+    </tbody>
+  </table>
+
+  {{template "footer"}}
+
+{{ end }}

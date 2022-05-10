@@ -1,0 +1,39 @@
+{{define "edit"}}
+{{template "header"}}
+
+<div class="card">
+  <div class="card-header">
+    Empleados
+  </div>
+  <div class="card-body">
+    <form method="post" action="/edit">
+      
+      <div class="form-group">
+        <label class="sr-only" for="inputName">id</label>
+        <input type="hidden" value="{{.Id}}" class="form-control" name="id" id="id" placeholder="id">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text"
+          value="{{.Name}}"
+          class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="Ingrese el nombre">
+        <small id="helpId" class="form-text text-muted">Ingrese el nombre</small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text"
+          value="{{.Email}}"
+          class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="Ingrese el email">
+        <small id="helpId" class="form-text text-muted">Ingrese el email</small>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+  </div>
+  
+</div>
+
+{{template "footer"}}
+{{end}}
